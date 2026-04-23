@@ -38,15 +38,15 @@
         </div>
       </div>
       <div class="about-timeline">
-        <h3 class="about-timeline__title">Nuestra trayectoria</h3>
-        @for (h of hitos; track h.año) {
-          <div class="timeline-item">
-            <div class="timeline-item__año">{{ h.año }}</div>
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__evento">{{ h.evento }}</div>
-          </div>
-        }
-      </div>
+  <h3 class="about-timeline__title">Nuestra trayectoria</h3>
+  @for (h of hitos; track h['año']) {
+    <div class="timeline-item">
+      <div class="timeline-item__año">{{ h['año'] }}</div>
+      <div class="timeline-item__dot"></div>
+      <div class="timeline-item__evento">{{ h.evento }}</div>
+    </div>
+  }
+    </div>
     </div>
   </div>
 </section>

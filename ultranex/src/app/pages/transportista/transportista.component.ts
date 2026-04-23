@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core'; // Añadimos computed para mejores prácticas
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-transportista',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule,],
   template: `
     <div class="page-hero page-hero--blue" style="padding-bottom: var(--space-lg);">
       <div class="container">
@@ -18,10 +18,9 @@ import { RouterLink } from '@angular/router';
     <div class="container" style="padding-top:var(--space-xl); padding-bottom:var(--space-3xl);">
       <div class="transport-layout">
 
-        <!-- RESUMEN -->
         <div class="transport-metrics">
           <div class="transport-metric transport-metric--blue">
-            <div class="transport-metric__val">{{ asignados.length }}</div>
+            <div class="transport-metric__val">{{ asignados().length }}</div>
             <div class="transport-metric__label">Asignados</div>
           </div>
           <div class="transport-metric transport-metric--yellow">
@@ -34,9 +33,8 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
 
-        <!-- LISTA DE ENVÍOS -->
         <div class="transport-list">
-          @for (e of asignados; track e.codigo) {
+          @for (e of asignados(); track e.codigo) {
             <div class="transport-card" [class.transport-card--done]="e.estado === 'entregado'">
               <div class="transport-card__left">
                 <div class="transport-card__codigo">{{ e.codigo }}</div>
@@ -91,11 +89,16 @@ export class TransportistaComponent {
     { codigo: 'UNX-2024-001243', direccion: 'Urb. Norte, Calle 3 Nro 10', destinatario: 'Ana Flores',     estado: 'pendiente' },
   ]);
 
+  // Usamos los paréntesis () para leer el valor del signal
   get pendientes(): number { return this.asignados().filter(e => e.estado !== 'entregado').length; }
   get entregados(): number { return this.asignados().filter(e => e.estado === 'entregado').length; }
 
-  marcarEntregado(envio: { estado: string }): void {
-    envio.estado = 'entregado';
-    this.asignados.set([...this.asignados()]);
+  marcarEntregado(envio: any): void {
+    // Para actualizar un objeto dentro de un signal de array:
+    this.asignados.update(envios => {
+      return envios.map(e => 
+        e.codigo === envio.codigo ? { ...e, estado: 'entregado' } : e
+      );
+    });
   }
 }

@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap, catchError, throwError } from 'rxjs';
 import { AuthUser, LoginPayload, Usuario } from '../models';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/app/environments/environment';
+
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
