@@ -202,9 +202,12 @@
     font-size: 2.8rem;
   }
 
-  .usa-visual-column {
-    order: -1; /* Para que la imagen salga arriba en celulares */
-  }
+.usa-visual-column {
+  flex: 0 0 50%;   /* Ocupa exactamente el 50% del ancho (MITAD DE LA PÁGINA) */
+  width: 50%;      /* Fallback de ancho */
+  height: 100%;    /* Ocupa todo el alto disponible */
+  overflow: hidden;
+}
 
   .usa-floating-tag {
     right: 10px; /* Ajuste para que no se salga de la pantalla en móvil */
