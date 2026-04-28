@@ -4,7 +4,7 @@ import { ContactoHome } from '../../sections/contacto-home/contacto-home';
 @Component({
   selector: 'page-contacto',
   standalone: true,
-  imports: [ContactoHome],
+  imports: [ContactoHome,],
   template: `
     <div class="contact-page">
       <div class="container text-center">
@@ -12,11 +12,6 @@ import { ContactoHome } from '../../sections/contacto-home/contacto-home';
         <p>Atención al cliente 24/7 para rastreo y consultas corporativas.</p>
       </div>
       <app-contacto-home></app-contacto-home>
-
-      <div class="map-placeholder">
-        <p>🗺️ Mapa Interactivo de Cobertura Bolivia</p>
-      </div>
-    </div>
   `,
   styles: [`
     .contact-page { padding: 120px 0 50px; }
