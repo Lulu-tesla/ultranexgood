@@ -1,172 +1,153 @@
-/* ==========================================
-   NOTICIAS CLEAN PRO - ULTRANEX WHITE EDITION
-   ========================================== */
-
-.noticias-wrapper {
-    background-color: #ffffff; /* Fondo Blanco Puro */
-    min-height: 100vh;
-    padding-top: 140px;
-    color: #1a1a1a; /* Texto casi negro para mejor lectura */
+.contacto-master-wrapper {
+  background-color: #ffffff;
 }
 
-/* --- HEADER MINIMALISTA --- */
-.news-hero {
-    text-align: left;
-    padding: 60px 40px;
-    border-left: 8px solid #1C05B3; /* Azul Neto como acento fuerte */
-    margin: 0 auto 80px;
-    max-width: 1300px;
+.faq-tech-section {
+  padding: 120px 0;
+  background: radial-gradient(circle at top right, #f8f9ff, #ffffff);
 }
 
-.news-label {
-    color: #FF0000; /* Rojo Acción */
-    font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+.faq-header-box {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-.news-title {
-    font-size: 4.5rem;
-    font-weight: 950;
-    text-transform: uppercase;
-    color: #000;
-    line-height: 0.9;
-    margin: 15px 0;
+.label-tech {
+  color: #1C05B3;
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 15px;
 }
 
-.accent-text {
-    color: transparent;
-    -webkit-text-stroke: 1.5px #1C05B3; /* Contorno Azul sobre fondo blanco */
+.main-title {
+  font-size: 4.5rem;
+  font-weight: 950;
+  color: #000;
+  line-height: 1;
 }
 
-/* --- GRID DE NOTICIAS --- */
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 50px;
-    padding: 0 40px 120px;
-    max-width: 1400px;
-    margin: 0 auto;
+.outline-blue {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #1C05B3;
 }
 
-/* --- TARJETA "PREMIUM WHITE" --- */
-.news-card {
-    background: #ffffff;
-    border: 1px solid #f0f0f0; /* Borde casi invisible */
-    border-radius: 8px; /* Un poco más suave para el estilo blanco */
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    overflow: hidden;
-    /* Sombra de alta gama (Layered Shadow) */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
-                0 2px 4px -1px rgba(0, 0, 0, 0.03);
+.section-desc {
+  color: #666;
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
 }
 
-.news-card:hover {
-    transform: translateY(-12px);
-    border-color: #1C05B3;
-    box-shadow: 0 25px 50px -12px rgba(28, 5, 179, 0.15); /* Sombra con toque azul */
+/* --- GRID DE TARJETAS --- */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.news-img-box {
-    position: relative;
-    height: 260px;
-    overflow: hidden;
+.faq-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
 }
 
-.news-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
+.faq-card:hover {
+  border-color: #1C05B3;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(28, 5, 179, 0.08);
 }
 
-.news-card:hover .news-img-box img {
-    transform: scale(1.08);
+.faq-card-inner {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
 }
 
-.category-tag {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #000; /* Negro sólido sobre la imagen */
-    color: #fff;
-    padding: 6px 14px;
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    z-index: 2;
+.faq-visual-icon {
+  width: 60px;
+  height: 60px;
+  background: #f0f2ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: 0.3s;
 }
 
-.news-body {
-    padding: 40px 30px;
+.faq-visual-icon i {
+  font-size: 1.8rem;
+  color: #1C05B3;
 }
 
-.news-date {
-    color: #999;
-    font-size: 0.8rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
+.faq-card:hover .faq-visual-icon {
+  background: #1C05B3;
 }
 
-.news-date::before {
-    content: '';
-    width: 20px;
-    height: 2px;
-    background: #FF0000;
+.faq-card:hover .faq-visual-icon i {
+  color: #fff;
 }
 
-.news-body h3 {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: #000;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
+.faq-content { flex: 1; }
+
+.faq-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.news-card:hover h3 {
-    color: #1C05B3;
+.faq-top h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.news-body p {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    font-weight: 400;
+/* --- INDICADOR +/- --- */
+.toggle-indicator {
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
-/* --- BOTÓN DE ACCIÓN --- */
-.btn-read-more {
-    background: #1C05B3;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-weight: 800;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    transition: 0.3s;
-    border-radius: 4px;
+.bar {
+  position: absolute;
+  background: #1C05B3;
+  transition: 0.3s;
 }
 
-.btn-read-more:hover {
-    background: #000;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.bar:nth-child(1) { width: 100%; height: 2px; top: 9px; left: 0; }
+.bar:nth-child(2) { width: 2px; height: 100%; top: 0; left: 9px; }
+
+.faq-card.is-active .bar:nth-child(2) { transform: rotate(90deg); opacity: 0; }
+
+/* --- RESPUESTA --- */
+.faq-answer-wrapper {
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
-/* RESPONSIVE */
+.faq-answer-content {
+  padding-top: 20px;
+}
+
+.faq-answer-content p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
-    .news-title { font-size: 2.8rem; }
-    .news-hero { padding: 40px 20px; border-left-width: 5px; }
+  .main-title { font-size: 3rem; }
+  .faq-grid { grid-template-columns: 1fr; }
 }

@@ -1,40 +1,67 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Navbar } from '../../sections/navbar/navbar';
 import { Footer } from '../../sections/footer/footer';
+
+export interface Noticia {
+  id: number;
+  titulo: string;
+  resumen: string;
+  categoria: string;
+  ubicacion: string;
+  fecha: string;
+  imagen: string;
+}
 
 @Component({
   selector: 'app-noticias',
   standalone: true,
-  imports: [CommonModule, Footer],
+  imports: [CommonModule, Navbar, Footer],
   templateUrl: './noticias.html',
   styleUrl: './noticias.css'
 })
 export class Noticias {
-  // Lista de noticias para que el HTML sea dinámico
-  noticias = [
+  categorias: string[] = ['Todas', 'Nacionales', 'Regionales', 'Locales', 'Provinciales'];
+  categoriaSeleccionada: string = 'Todas';
+
+  noticias: Noticia[] = [
     {
       id: 1,
-      categoria: 'OPERACIONES',
-      titulo: 'Nueva Ruta Multimodal: Conectando el Oriente con Puertos del Pacífico',
-      extracto: 'Optimizamos los tiempos de tránsito en un 20% mediante nuestra nueva alianza estratégica.',
-      fecha: '26 ABR 2026',
-      img: 'assets/images/noticias/n1.jpg'
+      titulo: 'CARGA CON DEMORA EN LAS ENTREGAS POR BLOQUEOS',
+      resumen: 'Informamos a nuestros clientes que debido a factores externos en las rutas troncales, el tiempo de entrega podría verse afectado. Mantenemos monitoreo 24/7 para garantizar la seguridad de sus envíos.',
+      categoria: 'Nacionales',
+      ubicacion: 'Santa Cruz',
+      fecha: '25 ABR 2026',
+      imagen: 'assets/images/noticias/bloqueo-rutas.jpg'
     },
     {
       id: 2,
-      categoria: 'TECNOLOGÍA',
-      titulo: 'Ultranex implementa IA para el Rastreo Predictivo de Carga',
-      extracto: 'Nuestra plataforma Ultranex V2 ahora anticipa posibles retrasos climáticos en tiempo real.',
-      fecha: '24 ABR 2026',
-      img: 'assets/images/noticias/n2.jpg'
+      titulo: 'NUEVA FLOTA DE TRANSPORTE DE ALTO TONELAJE',
+      resumen: 'Ultranex refuerza su capacidad operativa con la adquisición de 10 unidades especializadas para rutas internacionales, optimizando el transporte de maquinaria industrial.',
+      categoria: 'Locales',
+      ubicacion: 'Tarija',
+      fecha: '22 ABR 2026',
+      imagen: 'assets/images/noticias/flota-camiones.jpg'
     },
     {
       id: 3,
-      categoria: 'INDUSTRIA',
-      titulo: 'Expansión de Flota: Adquisición de 10 nuevos camiones de alto tonelaje',
-      extracto: 'Reforzamos nuestra capacidad de carga pesada para proyectos mineros e industriales.',
-      fecha: '20 ABR 2026',
-      img: 'assets/images/noticias/n3.jpg'
+      titulo: 'APERTURA DE NODO LOGÍSTICO ESTRATÉGICO',
+      resumen: 'Inauguramos nuestro nuevo centro de control operativo, diseñado para agilizar la distribución y recepción de paquetería en el occidente del país con tecnología láser.',
+      categoria: 'Regionales',
+      ubicacion: 'La Paz',
+      fecha: '18 ABR 2026',
+      imagen: 'assets/images/noticias/almacen-logistico.jpg'
     }
   ];
+
+  get noticiasFiltradas(): Noticia[] {
+    if (this.categoriaSeleccionada === 'Todas') {
+      return this.noticias;
+    }
+    return this.noticias.filter(n => n.categoria === this.categoriaSeleccionada);
+  }
+
+  seleccionarCategoria(cat: string): void {
+    this.categoriaSeleccionada = cat;
+  }
 }

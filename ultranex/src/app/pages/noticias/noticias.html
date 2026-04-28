@@ -1,36 +1,104 @@
-<div class="noticias-wrapper">
+<app-navbar></app-navbar>
 
-  <header class="news-hero">
+<div class="news-hero-viewport">
+  <div class="hero-bg-media">
+    <img src="assets/images/noticias/hero-bg.jpg" alt="Logística Ultranex Background">
+    <div class="hero-overlay-gradient"></div>
+  </div>
+
+  <header class="news-header-content">
     <div class="container">
-      <span class="news-label">CENTRO DE ACTUALIDAD</span>
-      <h1 class="news-title">Noticias y <span class="accent-text">Reportes</span></h1>
-      <p class="news-subtitle">Manténgase informado sobre las últimas operaciones y avances tecnológicos de Ultranex.</p>
+      <div class="glass-info-card">
+        <span class="label-industrial">NÚCLEO DE INFORMACIÓN</span>
+        <h1 class="main-title">NOTICIAS <span class="outline-blue">ULTRANEX</span></h1>
+        <div class="title-separator"></div>
+        <p class="subtitle">Monitoreo de red, reportes de estado y actualizaciones estratégicas del sector logístico a nivel nacional.</p>
+
+        <div class="breadcrumb-tech">
+          <span class="root">INICIO</span>
+          <i class='bx bx-chevron-right'></i>
+          <span class="current">NOTICIAS</span>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <div class="news-grid">
+  <div class="airport-ticker-container">
+    <div class="ticker-live-label">
+      <span class="pulse-dot-red"></span> LIVE FEED
+    </div>
+    <div class="ticker-wrapper">
+      <div class="ticker-content">
+        <span class="ticker-item"><i class='bx bxs-plane-takeoff'></i> TARIJA -> SANTA CRUZ: [14:00] - ESTADO: EN TRÁNSITO</span>
+        <span class="ticker-item"><i class='bx bxs-truck'></i> LA PAZ -> ORURO: [DESPACHADO] - SIN NOVEDAD</span>
+        <span class="ticker-item"><i class='bx bxs-bolt'></i> ULTRANEX CARGO: NOSOTROS LLEGAMOS DONDE OTROS NO LLEGAN</span>
+        <span class="ticker-item"><i class='bx bxs-plane-takeoff'></i> COCHABAMBA -> BENI: EMBARQUE PRIORITARIO</span>
+        <span class="ticker-item"><i class='bx bxs-plane-takeoff'></i> TARIJA -> SANTA CRUZ: [14:00] - ESTADO: EN TRÁNSITO</span>
+        <span class="ticker-item"><i class='bx bxs-truck'></i> LA PAZ -> ORURO: [DESPACHADO] - SIN NOVEDAD</span>
+        <span class="ticker-item"><i class='bx bxs-bolt'></i> ULTRANEX CARGO: NOSOTROS LLEGAMOS DONDE OTROS NO LLEGAN</span>
+        <span class="ticker-item"><i class='bx bxs-plane-takeoff'></i> COCHABAMBA -> BENI: EMBARQUE PRIORITARIO</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <article class="news-card" *ngFor="let item of noticias">
-        <div class="news-img-box">
-          <img [src]="item.img" [alt]="item.titulo">
-          <span class="category-tag">{{ item.categoria }}</span>
+<div class="news-main-wrapper">
+  <div class="container">
+    <div class="news-grid-layout">
+
+      <main class="news-feed-column">
+        @for (item of noticiasFiltradas; track item.id) {
+          <article class="industrial-article">
+            <div class="article-meta-header">
+              <span class="meta-tag">NOTICIA {{ item.categoria | uppercase }}</span>
+              <span class="meta-divider">/</span>
+              <span class="meta-location">{{ item.ubicacion | uppercase }}</span>
+              <span class="meta-date">PUBLICADO EL {{ item.fecha }}</span>
+            </div>
+
+            <h2 class="article-title">{{ item.titulo }}</h2>
+
+            <div class="article-image-box">
+              <span class="location-badge"><i class='bx bx-map'></i> {{ item.ubicacion }}</span>
+              <img [src]="item.imagen" [alt]="item.titulo" class="news-photo" loading="lazy">
+              <div class="scan-laser-effect"></div>
+            </div>
+
+            <p class="article-body-text">{{ item.resumen }}</p>
+
+            <button class="btn-read-more">
+              LEER REPORTE COMPLETO <i class='bx bx-right-arrow-alt'></i>
+            </button>
+          </article>
+        }
+      </main>
+
+      <aside class="news-sidebar-column">
+        <div class="sticky-sidebar">
+          <div class="sidebar-widget">
+            <h3 class="widget-title">CATEGORÍAS</h3>
+            <ul class="category-menu">
+              @for (cat of categorias; track cat) {
+                <li>
+                  <a (click)="seleccionarCategoria(cat)" [class.is-active]="categoriaSeleccionada === cat">
+                    {{ cat }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="sidebar-widget info-widget">
+            <i class='bx bx-radar info-icon'></i>
+            <h3 class="widget-title-small">SISTEMA EN LÍNEA</h3>
+            <p>Monitoreo constante de sus paquetes mediante nuestro sistema integrado.</p>
+            <a routerLink="/contacto" class="btn-sidebar-action">SOPORTE TÉCNICO</a>
+          </div>
         </div>
-
-        <div class="news-body">
-          <span class="news-date">{{ item.fecha }}</span>
-          <h3>{{ item.titulo }}</h3>
-          <p>{{ item.extracto }}</p>
-
-          <button class="btn-read-more">
-            LEER MÁS
-            <i class='bx bx-right-arrow-alt'></i>
-          </button>
-        </div>
-      </article>
+      </aside>
 
     </div>
-  </main>
-
-  <app-footer></app-footer>
+  </div>
 </div>
+
+<app-footer></app-footer>

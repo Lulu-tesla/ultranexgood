@@ -1,4 +1,45 @@
-<div>
+<app-navbar></app-navbar>
+
+<div class="contacto-master-wrapper">
+  <app-contacto-home></app-contacto-home>
+
+  <section class="faq-tech-section">
+    <div class="container">
+      <div class="faq-header-box">
+        <span class="label-tech">CENTRO DE SOPORTE INTEGRAL</span>
+        <h2 class="main-title">Resolución de <span class="outline-blue">Dudas</span></h2>
+        <p class="section-desc">Acceda a la base de conocimientos técnicos de Ultranex para optimizar su logística.</p>
+      </div>
+
+      <div class="faq-grid">
+        @for (faq of faqs; track faq.pregunta) {
+          <article class="faq-card" [class.is-active]="faq.abierta" (click)="toggleFaq(faq)">
+            <div class="faq-card-inner">
+              <div class="faq-visual-icon">
+                <i [class]="faq.icono"></i>
+              </div>
+
+              <div class="faq-content">
+                <div class="faq-top">
+                  <h3>{{ faq.pregunta }}</h3>
+                  <div class="toggle-indicator">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </div>
+                </div>
+
+                <div class="faq-answer-wrapper" [style.height]="faq.abierta ? 'auto' : '0'">
+                  <div class="faq-answer-content">
+                    <p>{{ faq.respuesta }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <app-footer></app-footer>
 </div>
-
