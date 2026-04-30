@@ -1,3 +1,7 @@
+/* ============================================================
+   ULTRANEX CONTACTO HOME - FULL STYLESHEET
+   ============================================================ */
+
 .contacto-section-white {
     background-color: #ffffff !important;
     padding: 120px 0;
@@ -12,12 +16,12 @@
 
 .contacto-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr 1.1fr; /* Mantiene el balance 50/50 */
     gap: 80px;
     align-items: flex-start;
 }
 
-/* --- INFO SIDE --- */
+/* --- LADO IZQUIERDO: TEXTOS --- */
 .contacto-tag {
     color: #1C05B3;
     letter-spacing: 4px;
@@ -31,7 +35,7 @@
     font-size: 3rem;
     color: #1a1a1a;
     line-height: 1.1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .text-red { color: #FF0000; }
@@ -39,9 +43,44 @@
 .contacto-description {
     color: #666;
     font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- SELECTOR DE 9 DEPARTAMENTOS --- */
+.sede-selector-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea si no caben */
+    gap: 10px;
     margin-bottom: 40px;
 }
 
+.sede-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 8px 18px;
+    border-radius: 50px; /* Estilo píldora moderna */
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing: 1px;
+}
+
+.sede-btn:hover {
+    border-color: #1C05B3;
+    color: #1C05B3;
+}
+
+.sede-btn.active {
+    background: #1C05B3;
+    color: #ffffff;
+    border-color: #1C05B3;
+    box-shadow: 0 6px 15px rgba(28, 5, 179, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- TARJETAS DE INFORMACIÓN --- */
 .info-cards-stack {
     display: flex;
     flex-direction: column;
@@ -60,14 +99,15 @@
 }
 
 .info-card:hover {
-    transform: translateX(15px);
+    transform: translateX(10px);
     border-color: #1C05B3;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .info-icon-box {
     width: 55px;
     height: 55px;
+    min-width: 55px;
     background: #1C05B3;
     color: white;
     border-radius: 12px;
@@ -82,6 +122,8 @@
     font-weight: 900;
     color: #888;
     letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .info-text-box p {
@@ -91,13 +133,18 @@
     margin: 0;
 }
 
-/* --- FORM SIDE --- */
+.info-text-box .dir-text {
+    font-family: 'Inter', sans-serif !important; /* La dirección larga se lee mejor sin Algerian */
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* --- LADO DERECHO: FORMULARIO OSCURO --- */
 .form-wrapper {
     background: #050505;
     padding: 50px;
     border-radius: 30px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-    position: relative;
 }
 
 .form-header h4 {
@@ -115,6 +162,8 @@
     gap: 20px;
 }
 
+.input-group { width: 100%; }
+
 .form-input, .form-textarea {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
@@ -123,6 +172,7 @@
     border-radius: 12px;
     color: white;
     font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
     outline: none;
     transition: 0.3s;
 }
@@ -137,6 +187,7 @@
     resize: none;
 }
 
+/* BOTÓN DEL FORMULARIO */
 .btn-send-ultra {
     background: #1C05B3;
     color: white;
@@ -145,7 +196,6 @@
     border-radius: 12px;
     font-family: 'Algerian', serif !important;
     font-size: 1.1rem;
-    font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -156,13 +206,14 @@
 }
 
 .btn-send-ultra:hover {
-    background: #FF0000;
+    background: #FF0000; /* Se vuelve rojo en hover como querías */
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 992px) {
     .contacto-grid { grid-template-columns: 1fr; gap: 50px; }
     .form-wrapper { padding: 35px; }
+    .sede-selector-grid { justify-content: center; }
 }

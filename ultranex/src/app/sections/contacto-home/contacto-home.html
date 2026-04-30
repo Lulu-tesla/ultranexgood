@@ -4,19 +4,28 @@
     <div class="contacto-grid">
 
       <div class="contacto-info-side">
-        <h6 class="contacto-tag">ATENCIÓN INMEDIATA</h6>
+        <h6 class="contacto-tag">ATENCIÓN NACIONAL</h6>
         <h2 class="contacto-title-algerian">ESTAMOS PARA <span class="text-red">AYUDARTE</span></h2>
         <p class="contacto-description">
-          ¿Tienes dudas sobre tu envío o quieres una cotización personalizada?
-          Nuestro equipo técnico está listo para asistirte en todo momento.
+          Selecciona tu departamento para contactar directamente con nuestro equipo técnico operativo local.
         </p>
+
+        <div class="sede-selector-grid">
+          <button
+            *ngFor="let sede of sedes"
+            (click)="cambiarSede(sede)"
+            class="sede-btn"
+            [class.active]="sedeActiva.id === sede.id">
+            {{ sede.ciudad }}
+          </button>
+        </div>
 
         <div class="info-cards-stack">
           <div class="info-card">
             <div class="info-icon-box"><i class="fa-solid fa-phone-volume"></i></div>
             <div class="info-text-box">
-              <span>LLÁMANOS</span>
-              <p>+591 70000000</p>
+              <span>LLÁMANOS AHORA</span>
+              <p>{{ sedeActiva.tel }}</p>
             </div>
           </div>
 
@@ -24,15 +33,15 @@
             <div class="info-icon-box"><i class="fa-solid fa-envelope-open-text"></i></div>
             <div class="info-text-box">
               <span>ESCRÍBENOS</span>
-              <p>contacto@ultranex.com</p>
+              <p>{{ sedeActiva.email }}</p>
             </div>
           </div>
 
           <div class="info-card">
             <div class="info-icon-box"><i class="fa-solid fa-location-dot"></i></div>
             <div class="info-text-box">
-              <span>OFICINA CENTRAL</span>
-              <p>Tarija, Bolivia</p>
+              <span>OFICINA CENTRAL {{ sedeActiva.ciudad }}</span>
+              <p class="dir-text">{{ sedeActiva.dir }}</p>
             </div>
           </div>
         </div>
@@ -67,4 +76,3 @@
     </div>
   </div>
 </section>
-

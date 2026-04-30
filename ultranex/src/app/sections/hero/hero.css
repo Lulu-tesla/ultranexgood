@@ -52,7 +52,7 @@
 /* --- ESLOGAN MEJORADO --- */
 .txt-slogan {
   font-size: clamp(1.4rem, 3.5vw, 2.2rem); /* Letras más grandes */
-  color: #ffffff;
+  color: #ffee00;
   font-style: italic;
   margin-bottom: 50px;
   text-shadow: 0 2px 15px rgba(0, 0, 0, 1);
@@ -63,7 +63,7 @@
 }
 
 .slogan-icon {
-  color: #1C05B3; /* Tu azul neto */
+  color: #eeff00; /* Tu azul neto */
   font-size: 1.8rem;
   filter: drop-shadow(0 0 10px rgba(28, 5, 179, 0.8));
 }

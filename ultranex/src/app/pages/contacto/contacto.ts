@@ -15,25 +15,25 @@ export class Contacto {
   faqs = [
     {
       pregunta: '¿Tiempos de entrega?',
-      respuesta: '24-48h en el eje central, 72h en provincias.',
+      respuesta: 'Servicio expres de 4hrs a 6hrs y Servicio estándar de 12hrs a 24hrs.',
       icono: 'fa-solid fa-bolt-lightning',
       abierta: false
     },
     {
       pregunta: '¿Carga pesada?',
-      respuesta: 'Sí, contamos con grúas y camiones de alto tonelaje.',
+      respuesta: 'Peso Maximo de 15kg peso neto-.',
       icono: 'fa-solid fa-weight-hanging',
       abierta: false
     },
     {
       pregunta: '¿Rastreo online?',
-      respuesta: 'Sistema GPS activo 24/7 con su código de guía.',
+      respuesta: 'Sistema GPS activo 24/7 con su código de guía. (EN PROCESO DE IMPLEMENTACIÓN).',
       icono: 'fa-solid fa-location-dot',
       abierta: false
     },
     {
-      pregunta: '¿Cobertura Tarija?',
-      respuesta: 'Red completa en todo el departamento y fronteras.',
+      pregunta: '¿Cobertura Nacional?',
+      respuesta: 'Red completa en todo el departamento y fronteras, A Una sola llamada de cada ciudad.',
       icono: 'fa-solid fa-map',
       abierta: false
     },
@@ -45,7 +45,7 @@ export class Contacto {
     },
     {
       pregunta: '¿Horarios de sucursal?',
-      respuesta: 'Lun-Vie: 08:30-18:30 | Sáb: 09:00-13:00.',
+      respuesta: 'Lun-Vie: 08:30-12:30 14:00-17:00  | Sáb: 09:00-13:00.',
       icono: 'fa-solid fa-calendar-days',
       abierta: false
     },
@@ -62,7 +62,7 @@ export class Contacto {
       abierta: false
     },
     {
-      pregunta: '¿Atención técnica?',
+      pregunta: '¿Soporte técnico?',
       respuesta: 'Soporte especializado vía chat o presencial.',
       icono: 'fa-solid fa-headset',
       abierta: false
