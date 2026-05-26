@@ -4,19 +4,12 @@
 
       <div class="nav-brand-link" (click)="goToHome()">
         <div class="logo-power-box">
-          </div>
+        </div>
       </div>
 
       <ul class="nav-menu" [class.mobile-open]="isMenuOpen">
         <li>
           <a (click)="goToHome()" class="nav-link clickable">Inicio</a>
-        </li>
-        <li>
-          <a routerLink="/tracking"
-            routerLinkActive="active-link"
-            fragment="rastreo-seccion"
-            class="nav-link"
-            (click)="closeMenu()">Rastreo</a>
         </li>
         <li>
           <a routerLink="/nosotros"
@@ -35,28 +28,31 @@
         <li>
           <a routerLink="/sucursales"
              routerLinkActive="active-link"
-
              class="nav-link"
              (click)="closeMenu()">Sucursales</a>
         </li>
         <li>
           <a routerLink="/noticias"
              routerLinkActive="active-link"
-
              class="nav-link"
              (click)="closeMenu()">Noticias</a>
         </li>
         <li>
           <a routerLink="/contacto"
              routerLinkActive="active-link"
-
              class="nav-link"
              (click)="closeMenu()">Contacto</a>
         </li>
-                <li>
+        <li>
+          <a routerLink="/tracking"
+            routerLinkActive="active-link"
+            fragment="rastreo-seccion"
+            class="nav-link"
+            (click)="closeMenu()">Rastreo</a>
+        </li>
+        <li>
           <a routerLink="/acceso"
              routerLinkActive="active-link"
-
              class="nav-link contact-btn"
              (click)="closeMenu()">Acceso</a>
         </li>

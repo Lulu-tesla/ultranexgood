@@ -38,9 +38,9 @@
         <h4 class="footer-title">Servicios</h4>
         <ul>
           <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> Courier Nacional</a></li>
-          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> Servicio local </a></li>
-          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> Carga Nacional </a></li>
-          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i>E-commerce</a></li>
+          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> Servicio local</a></li>
+          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> Carga Nacional</a></li>
+          <li><a routerLink="/" fragment="servicios-seccion"><i class='bx bx-chevron-right'></i> E-commerce</a></li>
         </ul>
       </div>
 
@@ -48,9 +48,18 @@
         <h4 class="footer-title">Novedades</h4>
         <p>Suscríbete para recibir ofertas, noticias y estados de red.</p>
         <div class="newsletter-input">
-          <input type="email" placeholder="tu@correo.com">
-          <button><i class='bx bx-paper-plane'></i></button>
+          <input
+            type="email"
+            placeholder="tu@correo.com"
+            [(ngModel)]="emailInput"
+            [disabled]="enviando || enviado">
+          <button (click)="suscribirse()" [disabled]="enviando || enviado">
+            <i class='bx' [ngClass]="enviado ? 'bx-check' : enviando ? 'bx-loader-alt' : 'bx-paper-plane'"></i>
+          </button>
         </div>
+        <p *ngIf="enviado" style="color: #4ade80; font-size: 12px; margin-top: 8px;">
+          ✅ ¡Suscripción exitosa!
+        </p>
       </div>
     </div>
 

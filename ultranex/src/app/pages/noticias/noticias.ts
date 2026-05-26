@@ -27,31 +27,57 @@ export class Noticias {
   noticias: Noticia[] = [
     {
       id: 1,
-      titulo: 'No hay salidas de buses desde Cochabamba hacia Santa Cruz por bloqueo y derrumbe en las rutas',
-      resumen: 'Informamos a nuestros clientes que debido a factores externos en las rutas troncales, el tiempo de entrega podría verse afectado. Mantenemos monitoreo 24/7 para garantizar la seguridad de sus envíos.',
+      titulo: '18 puntos de bloqueo afectan rutas hacia el Altiplano, Yungas y fronteras en La Paz',
+      resumen: 'Nuestras rutas hacia el Altiplano, Yungas y fronteras están severamente restringidas. Los tiempos de tránsito desde y hacia La Paz presentan demoras considerables. Nuestro equipo de operaciones sigue buscando vías alternas para garantizar la entrega de su carga.',
       categoria: 'Nacionales',
-      ubicacion: 'Santa Cruz-Cochabanba',
-      fecha: '25 ABR 2026',
-      imagen: 'assets/images/Noticias/Stcruz.png',
-
+      ubicacion: 'La Paz',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/lapaz.jpg'
     },
     {
       id: 2,
-      titulo: 'Intensa lluvia en Tarija deja intransitable varios caminos',
-      resumen: 'Debido al aluvión en carreteras de Tarija, algunos envíos pueden presentar retrasos.Estamos aplicando rutas alternas y priorizando entregas urgentes para reducir el impacto Gracias por tu comprensión',
-      categoria: 'Locales',
-      ubicacion: 'Tarija',
-      fecha: '22 ABR 2026',
-      imagen: 'assets/images/Noticias/Tarija.png'
+      titulo: 'Eje troncal La Paz–Cochabamba interrumpido: 16 puntos de bloqueo registrados en Oruro',
+      resumen: 'Fuerte afectación en el eje troncal que conecta La Paz con Cochabamba. Nuestro equipo de Carga Nacional está monitoreando la situación hora a hora para mantener la mayor fluidez posible en los envíos que transitan por este departamento.',
+      categoria: 'Nacionales',
+      ubicacion: 'Oruro',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/oruro.jpg'
     },
     {
       id: 3,
-      titulo: 'Comunarios guaraníes cortan la ruta Santa Cruz–Yacuiba y exigen nuevo ejecutivo',
-      resumen: 'Ultranex Cargo informa que, debido al bloqueo en la ruta Santa Cruz – Yacuiba a la altura de Gutiérrez, se están registrando demoras en los envíos que transitan por este corredor; la empresa ha activado medidas de contingencia y monitoreo constante, recomendando a sus clientes prever posibles retrasos mientras se normaliza la circulación.',
+      titulo: 'Cochabamba registra 12 puntos de bloqueo con impacto directo en la conexión oriente-occidente',
+      resumen: 'El centro del país sufre interrupciones que afectan la conexión entre el oriente y occidente de Bolivia. Los envíos con origen o destino en Cochabamba podrían presentar extensiones en sus tiempos de entrega. Agradecemos su comprensión ante esta situación de carácter nacional.',
+      categoria: 'Nacionales',
+      ubicacion: 'Cochabamba',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/cochabamba.jpg'
+    },
+    {
+      id: 4,
+      titulo: 'Rutas de conexión al sur del país interrumpidas: 8 puntos de bloqueo en Potosí',
+      resumen: 'Las rutas de conexión hacia el sur del país presentan interrupciones activas en Potosí. Recomendamos a nuestros clientes planificar sus envíos con anticipación y consultar con nuestros agentes la disponibilidad y los tiempos estimados de entrega antes de despachar su carga.',
       categoria: 'Regionales',
-      ubicacion: 'Santa Cruz – Yacuiba',
-      fecha: '18 ABR 2026',
-      imagen: 'assets/images/Noticias/Bloqueo3.png '
+      ubicacion: 'Potosí',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/potosi.png'
+    },
+    {
+      id: 5,
+      titulo: 'Alta saturación de carga en Santa Cruz ante restricciones hacia el occidente del país',
+      resumen: 'Debido a la situación de bloqueos a nivel nacional, nuestra sucursal central en Santa Cruz presenta alta saturación de carga con destino al occidente boliviano. Estamos priorizando el despacho de envíos de primera necesidad, como medicamentos y alimentos perecederos, para garantizar su llegada oportuna.',
+      categoria: 'Regionales',
+      ubicacion: 'Santa Cruz',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/santacruz.jpg'
+    },
+    {
+      id: 6,
+      titulo: 'Chuquisaca opera con afectaciones menores: 1 punto de bloqueo activo en la región',
+      resumen: 'Las rutas en Chuquisaca operan con precaución ante un punto de bloqueo activo en la región. Ultranex Cargo mantiene el flujo logístico activo con afectaciones menores, garantizando la continuidad del servicio para nuestros clientes con origen o destino en Sucre y sus alrededores.',
+      categoria: 'Locales',
+      ubicacion: 'Chuquisaca',
+      fecha: '25 MAY 2026',
+      imagen: 'assets/images/Noticias/chuquisaca.jpg'
     }
   ];
 
